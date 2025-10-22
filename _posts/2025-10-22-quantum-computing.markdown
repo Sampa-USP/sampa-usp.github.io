@@ -23,11 +23,11 @@ subprojects:
     link: sampa-usp.github.io/Monte-Carlo
     desc: Monte Carlo research
   - title: Quantum Machine Learning
-    img: machine-learning.png
+    img: quantum-machine-learning.png
     link: sampa-usp.github.io/Quantum-ML
     desc: Quantum Machine Learning research
   - title: Error Mitigation
-    img: error-mitigation.png
+    img: quantum-error-mitigation.png
     link: sampa-usp.github.io/Error-Mitigation
     desc: Error mitigation research
   - title: Quantum Algorithms
