@@ -57,7 +57,7 @@ address:
   - line: São Paulo - SP
 
 # Credits content
-credits: ''
+# credits: ''
 
 # Build settings
 markdown: kramdown
