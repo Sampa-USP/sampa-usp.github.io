@@ -13,25 +13,19 @@ subprojects:
   - title: Ab Initio
     img: ab-initio.png
     link: sampa-usp.github.io/AbInitio
-    desc: Ab Initio research
   - title: Catalysis
     img: catalysis.png
     link: sampa-usp.github.io/Catalysis
-    desc: Catalysis research
   - title: Monte Carlo
     img: monte-carlo.png
     link: sampa-usp.github.io/Monte-Carlo
-    desc: Monte Carlo research
   - title: Quantum Machine Learning
     img: quantum-machine-learning.png
     link: sampa-usp.github.io/Quantum-ML
-    desc: Quantum Machine Learning research
   - title: Error Mitigation
     img: quantum-error-mitigation.png
     link: sampa-usp.github.io/Error-Mitigation
-    desc: Error mitigation research
   - title: Quantum Algorithms
     img: quantum-algorithms.png
     link: sampa-usp.github.io/Quantum-Algorithms
-    desc: Quantum Algorithms research
 ---
