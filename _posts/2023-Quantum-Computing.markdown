@@ -2,7 +2,7 @@
 layout: default
 modal-id: 1
 date: 2014-07-18
-img: quantum-computing.png
+img: quantum_computing.png
 alt: image-alt
 project-date: April 2023
 client: Start Bootstrap
