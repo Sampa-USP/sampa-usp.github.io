@@ -518,3 +518,8 @@ footer .footer-below {
   display: flex;
   align-items: center;
 }
+
+footer .footer-above .row {
+  justify-content: center; /* centraliza horizontalmente */
+  text-align: center;      /* garante que o texto dentro também fique centralizado */
+}
