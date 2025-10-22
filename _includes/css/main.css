@@ -535,3 +535,48 @@ section#about.success h2,
 section#about.success p {
   color: inherit;
 }
+
+/* ===== Hero Section ===== */
+header.hero {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  background: url("../img/quantum-bg.jpg") center center/cover no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-image {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.6);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
