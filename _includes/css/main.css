@@ -535,45 +535,50 @@ section#about.success h2,
 section#about.success p {
   color: inherit;
 }
-
-/* ===== Hero Section ===== */
-/* ===== Hero Section ===== */
-header.hero {
-  position: relative;
-  width: 70%;
-  height: 70vh; /* altura da faixa hero */
-  background: url("../img/hero-banner.jpg") center center/cover no-repeat;
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+.hero {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  justify-content: center;      /* centraliza horizontalmente */
+  align-items: center;          /* centraliza verticalmente */
   text-align: center;
-}
-
-/* overlay sutil pra contraste com o texto */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-}
-
-/* conteúdo acima do overlay */
-.hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 0 20px;
+
+  background-image: url("img/hero-bg.jpg"); /* substitua se quiser imagem fixa */
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 20px;          /* bordas arredondadas */
+  overflow: hidden;             /* garante o recorte da imagem */
+  padding: 80px 20px;           /* espaço interno */
+  margin: 40px auto;            /* espaço externo */
+  max-width: 90%;               /* não ocupa toda a tela */
+  color: white;
 }
 
+/* imagem opcional dentro da hero */
+.hero-image {
+  max-width: 120px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+/* título e subtítulo */
 .hero-title {
-  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 2.4em;
+  margin-bottom: 10px;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: #f1f1f1;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* suave sombra no texto para legibilidade */
+.hero h1,
+.hero p {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
