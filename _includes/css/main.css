@@ -540,7 +540,7 @@ section#about.success p {
 /* ===== Hero Section ===== */
 header.hero {
   position: relative;
-  width: 100%;
+  width: 70%;
   height: 70vh; /* altura da faixa hero */
   background: url("../img/hero-banner.jpg") center center/cover no-repeat;
   display: flex;
