@@ -1,12 +1,18 @@
----
-layout: style
----
-
-:root {
-  --font-custom: "IBM Plex Sans", "Montserrat", sans-serif;
+--- layout: null ---:root {
+    --font-custom: "IBM Plex Sans", "Montserrat", sans-serif;
 }
 
 /* aplica globalmente */
-body, nav, .navbar, .navbar-nav, h1, h2, h3, h4, h5, h6, p {
-  font-family: var(--font-custom) !important;
+body,
+nav,
+.navbar,
+.navbar-nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: var(--font-custom) !important;
 }
