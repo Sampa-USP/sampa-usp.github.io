@@ -545,7 +545,7 @@ section#about.success p {
   text-align: center;
   position: relative;
 
-  background-image: url("img/hero-bg.jpg"); /* substitua se quiser imagem fixa */
+  background-image: url("img/hero-banner.jpg"); /* substitua se quiser imagem fixa */
   background-size: cover;
   background-position: center;
 
