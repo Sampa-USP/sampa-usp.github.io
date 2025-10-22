@@ -1,9 +1,10 @@
---- layout: style ---:root {
+layout: style
+/* root {
     --font-custom: "IBM Plex Sans", "Montserrat", sans-serif;
-}
+} */
 
 /* aplica globalmente */
-body,
+/* body,
 nav,
 .navbar,
 .navbar-nav,
@@ -15,4 +16,4 @@ h5,
 h6,
 p {
     font-family: var(--font-custom) !important;
-}
+}  */
