@@ -1,0 +1,48 @@
+/* ===========================
+   Contenção das imagens nos cards
+=========================== */
+
+/* Área de imagem consistente (altura controlada) */
+.thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;         /* formato horizontal mais natural */
+  width: 100%;
+  max-height: 280px;           /* limite de altura */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(70% 70% at 50% 30%, rgba(255,255,255,.08), transparent 70%),
+    #f7f9fc;                  /* fundo neutro suave */
+  border-radius: 10px;
+  padding: 8px;
+}
+
+/* Imagem reduzida para caber confortavelmente */
+.thumb img {
+  width: 95%;
+  height: auto;
+  max-height: 260px;          /* trava o tamanho vertical */
+  object-fit: contain;        /* mantém proporção, sem cortar */
+  object-position: center;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+  transition: transform .2s ease;
+}
+
+/* Efeito sutil no hover */
+.thumb:hover img {
+  transform: scale(1.03);
+}
+
+/* Em telas menores, reduz proporcionalmente */
+@media (max-width: 1024px) {
+  .thumb { max-height: 220px; }
+  .thumb img { max-height: 200px; width: 90%; }
+}
+
+@media (max-width: 700px) {
+  .thumb { max-height: 180px; }
+  .thumb img { max-height: 160px; width: 85%; }
+}
