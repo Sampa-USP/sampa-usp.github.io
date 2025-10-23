@@ -1,6 +1,6 @@
 ---
 layout: default
-modal-id: 1
+modal-id: 7
 date: 2023-05-01
 img: quantum-neural-states.jpg
 alt: image-alt
