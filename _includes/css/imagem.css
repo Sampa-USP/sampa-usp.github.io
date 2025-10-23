@@ -9,7 +9,7 @@
 }
 
 /* Caixa da imagem (altura fixa e responsiva) */
-#portfolio .portfolio-item .thumb{
+/* #portfolio .portfolio-item .thumb{
   width: 100%;
   height: var(--card-img-h);
   overflow: hidden;
@@ -19,10 +19,9 @@
   border-radius: 10px;
   padding: 8px;
   box-sizing: border-box;
-  /* remova qualquer altura antiga */
   max-height: none !important;
   aspect-ratio: auto !important;
-}
+} */
 
 /* A imagem se ajusta para CABER (sem cortar), ignorando Bootstrap */
 /* #portfolio .portfolio-item .thumb img{
@@ -35,7 +34,7 @@
   display: block;
   transition: transform .2s ease;
 } */
-#portfolio .thumb img {
+/* #portfolio .thumb img {
   max-width: 100%;
   max-height: 100%;
   width: auto;
@@ -45,6 +44,30 @@
   display: block;
   margin: 0 auto;
   transition: transform .2s ease;
+} */
+
+/* A célula ocupa toda a coluna do grid */
+#portfolio .portfolio-flex-row { justify-items: stretch !important; }
+
+/* Caixa padronizada */
+#portfolio .thumb{
+  width: 100%;
+  aspect-ratio: 4 / 3;               /* mesma forma para todos os cards */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* O ELEMENTO img preenche a caixa;
+   o conteúdo interno é escalado com contain (sem cortar) */
+#portfolio .portfolio-item .thumb img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;     /* mantém proporção, sem crop */
+  object-position: center center;
+  display: block;
 }
 
 /* Efeito sutil ao passar o mouse (opcional) */
