@@ -4,27 +4,22 @@
     <div class="portfolio-flex-row">
       {% for post in site.posts %}
       <div class="portfolio-flex-item portfolio-item">
-        <h3>{{ post.title }}</h3>
         {% if post.link %}
-        <!-- Caso o post tenha link: abre a página -->
         <a href="{{ post.link | relative_url }}" class="portfolio-link" target="_blank" rel="noopener">
           {% else %}
-          <!-- Caso não tenha link: abre o modal -->
           <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
             {% endif %}
 
-            <div class="thumb">
-              <img src="img/portfolio/{{ post.img }}" alt="{{ post.alt | default: post.title }}"
-                class="img-responsive img-centered">
-            </div>
+            <div class="card-title">{{ post.title }}</div>
 
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
+            <div class="thumb">
+              <img src="img/portfolio/{{ post.img }}" alt="{{ post.alt | default: post.title }}">
+              <div class="caption" aria-hidden="true">
+                <div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div>
               </div>
             </div>
-          </a>
 
+          </a>
       </div>
       {% endfor %}
     </div>
