@@ -2,50 +2,80 @@
   font-size: 1.2em;
   opacity: 0.9;
 }
-
-/* 1) Expande o container do portfolio além do limite do Bootstrap */
-#portfolio .container.portfolio-flex-grid{
-  width: 96vw !important;
-  max-width: none !important;
-  padding-left: 2vw !important;
-  padding-right: 2vw !important;
-  margin: 0 auto !important;
-}
-
-/* 2) Neutraliza a .row do tema que atrapalha o grid */
-#portfolio .portfolio-flex-grid .row{
-  display: contents !important;
-}
-
-/* 3) Libera os itens de larguras/floats antigos */
-#portfolio .portfolio-flex-item,
+/* =====  A) Normaliza o <a> e o card ===== */
 #portfolio .portfolio-item{
-  float: none !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+#portfolio .portfolio-link{
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  position: relative;     /* referência para regras antigas, se existirem */
+}
+
+/* =====  B) Neutraliza o overlay antigo do tema (que usa .portfolio-link .caption) ===== */
+#portfolio .portfolio-link > .caption{
+  /* se existir uma caption fora da .thumb, zera ela */
+  position: static !important;
   width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+
+/* =====  C) Overlay correto: só dentro da THUMB ===== */
+#portfolio .thumb{
+  /* caixa da imagem */
+  width: 100%;
+  height: var(--card-img-h, 280px);      /* controle de altura */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f7f9fc;
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#portfolio .thumb > .caption{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(60% 60% at 50% 50%, rgba(0,0,0,.18), rgba(0,0,0,.35));
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none; /* clique vai para o <a> */
+  border-radius: inherit;
+}
+#portfolio .portfolio-link:hover .thumb > .caption{ opacity: .75; }
+
+/* =====  D) A imagem CABE dentro da thumb (vence Bootstrap) ===== */
+#portfolio .thumb img{
+  width: 100% !important;
+  height: 100% !important;      /* vence height:auto do .img-responsive */
   max-width: none !important;
-  flex: none !important;
-  box-sizing: border-box !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center;
+  display: block;
 }
 
-/* 4) FORÇA o grid a usar 1/3 da tela para cada coluna */
-#portfolio .portfolio-flex-row{
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important; /* <- divide a tela em 3 */
-  gap: 3vw !important;                               /* padding agradável */
-  align-items: start;
-  justify-items: stretch;
+/* =====  E) Tamanho responsivo do quadro da imagem com clamp() ===== */
+:root{
+  --card-img-h: clamp(180px, 24vw, 320px);
 }
-
-/* Responsivo: 2 colunas e 1 coluna */
-@media (max-width: 1100px){
-  #portfolio .portfolio-flex-row{
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 4vw !important;
-  }
+@media (max-width: 1024px){
+  :root{ --card-img-h: clamp(160px, 28vw, 260px); }
 }
 @media (max-width: 700px){
-  #portfolio .portfolio-flex-row{
-    grid-template-columns: 1fr !important;
-    gap: 6vw !important;
-  }
+  :root{ --card-img-h: clamp(140px, 40vw, 220px); }
 }
