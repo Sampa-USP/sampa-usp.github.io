@@ -1,48 +1,51 @@
 /* ===========================
-   Contenção das imagens nos cards
+   Cards: tamanho controlado
+   (a imagem SEMPRE cabe)
 =========================== */
 
-/* Área de imagem consistente (altura controlada) */
-.thumb {
-  position: relative;
-  aspect-ratio: 4 / 3;         /* formato horizontal mais natural */
-  width: 100%;
-  max-height: 280px;           /* limite de altura */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    radial-gradient(70% 70% at 50% 30%, rgba(255,255,255,.08), transparent 70%),
-    #f7f9fc;                  /* fundo neutro suave */
-  border-radius: 10px;
-  padding: 8px;
+/* Altura da área de imagem escala com a tela, com limites */
+:root{
+  --card-img-h: clamp(180px, 24vw, 320px); /* min 180px, cresce até 320px */
 }
 
-/* Imagem reduzida para caber confortavelmente */
-.thumb img {
-  width: 95%;
-  height: auto;
-  max-height: 260px;          /* trava o tamanho vertical */
-  object-fit: contain;        /* mantém proporção, sem cortar */
-  object-position: center;
+/* Caixa da imagem (altura fixa e responsiva) */
+#portfolio .portfolio-item .thumb{
+  width: 100%;
+  height: var(--card-img-h);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #f7f9fc;
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  /* remova qualquer altura antiga */
+  max-height: none !important;
+  aspect-ratio: auto !important;
+}
+
+/* A imagem se ajusta para CABER (sem cortar), ignorando Bootstrap */
+#portfolio .portfolio-item .thumb img{
+  width: 100% !important;      /* vence .img-responsive */
+  height: 100% !important;     /* impede height:auto do Bootstrap */
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;  /* reduz para caber */
+  object-position: center center;
   display: block;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.20));
   transition: transform .2s ease;
 }
 
-/* Efeito sutil no hover */
-.thumb:hover img {
+/* Efeito sutil ao passar o mouse (opcional) */
+#portfolio .portfolio-item .thumb:hover img{
   transform: scale(1.03);
 }
 
-/* Em telas menores, reduz proporcionalmente */
-@media (max-width: 1024px) {
-  .thumb { max-height: 220px; }
-  .thumb img { max-height: 200px; width: 90%; }
+/* Ajustes finos para telas menores */
+@media (max-width: 1024px){
+  :root{ --card-img-h: clamp(160px, 28vw, 260px); }
 }
-
-@media (max-width: 700px) {
-  .thumb { max-height: 180px; }
-  .thumb img { max-height: 160px; width: 85%; }
+@media (max-width: 700px){
+  :root{ --card-img-h: clamp(140px, 40vw, 220px); }
 }
