@@ -39,7 +39,7 @@
 #portfolio .portfolio-flex-row{
   display: grid !important;
   grid-template-columns: repeat(3, minmax(360px, 1fr)) !important; /* cards mais largos */
-  gap: 0rem !important;            /* menos espaço entre cards */
+  gap: 2rem !important;            /* menos espaço entre cards */
   align-items: stretch;
   justify-items: center;
 }
