@@ -1,3 +1,12 @@
+#portfolio .portfolio-flex-item,
+#portfolio .portfolio-item,
+#portfolio .portfolio-link {
+  width: 100% !important;              /* ocupa 100% da coluna */
+  max-width: none !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
 /* 3) Centralização do conteúdo DENTRO do card */
 #portfolio .portfolio-item {
   display: flex;
