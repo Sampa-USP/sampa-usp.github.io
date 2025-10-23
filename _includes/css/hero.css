@@ -1,0 +1,49 @@
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+.hero {
+  display: flex;
+  justify-content: center;      /* centraliza horizontalmente */
+  align-items: center;          /* centraliza verticalmente */
+  text-align: center;
+  position: relative;
+
+  background-image: url("img/hero-banner.jpg"); /* substitua se quiser imagem fixa */
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 20px;          /* bordas arredondadas */
+  overflow: hidden;             /* garante o recorte da imagem */
+  padding: 80px 20px;           /* espaço interno */
+  margin: 40px auto;            /* espaço externo */
+  max-width: 90%;               /* não ocupa toda a tela */
+  color: white;
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+/* imagem opcional dentro da hero */
+.hero-image {
+  max-width: 120px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+/* título e subtítulo */
+.hero-title {
+  font-weight: 700;
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* suave sombra no texto para legibilidade */
+.hero h1,
+.hero p {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,102 @@
+
+/* ===========================
+   Paleta suave
+=========================== */
+:root{
+  --card-bg: #e0e7f6;            /* fundo do card */
+  --card-bg-soft: #d3dbec;       /* faixa do título */
+  --card-border: rgba(255,255,255,.08);
+  --card-shadow: 0 10px 24px rgba(3, 7, 18, .25);
+  --title: #011023;
+  --muted: #94a3b8;
+}
+
+/* ===========================
+   Grid (3 colunas desktop)
+=========================== */
+.portfolio-flex-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr)); /* 3 por linha */
+  gap: 28px;
+}
+
+/* 2 colunas em tablets */
+@media (max-width: 1024px){
+  .portfolio-flex-row{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+/* 1 coluna no mobile */
+@media (max-width: 640px){
+  .portfolio-flex-row{ grid-template-columns: 1fr; }
+}
+
+/* ===========================
+   Card
+=========================== */
+.portfolio-item{
+  position: relative;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: var(--card-bg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.portfolio-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(3,7,18,.32);
+  border-color: rgba(255,255,255,.14);
+}
+
+.portfolio-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+}
+
+/* Faixa de título no topo (opcional) */
+.card-title{
+  padding: 10px 14px 6px;
+  background: linear-gradient(180deg, var(--card-bg-soft), transparent 85%);
+  color: var(--title);
+  font-weight: 800;
+  letter-spacing: .02em;
+  font-size: 1.25rem;
+}
+
+/* ===========================
+   Área da imagem (contida)
+=========================== */
+.thumb{
+  position: relative;            /* pai do overlay */
+  aspect-ratio: 16 / 9;          /* todas iguais */
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(80% 80% at 50% 20%, rgba(255,255,255,.06), transparent 60%),
+    #0e1525;
+  padding: 10px;                 /* espaço para object-fit: contain */
+  overflow: hidden;
+  line-height: 0;
+}
+.thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* reduz para caber sem cortar */
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+}
+
+/* Overlay discreto no hover */
+.caption{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  background: radial-gradient(60% 60% at 50% 50%, rgba(0,0,0,.18), rgba(0,0,0,.4));
+  opacity:0; transition:opacity .2s ease; pointer-events:none;
+}
+.portfolio-link:hover .caption{ opacity:.85; }
+.caption-content{ color:#fff; }
+
+/* Reset contra estilos antigos do tema */
+.portfolio-item .caption,
+.portfolio-item .caption-content{ margin:0; padding:0; border:0; float:none; }
