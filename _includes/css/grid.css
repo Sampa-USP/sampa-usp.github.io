@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(60% 60% at 50% 50%, rgba(0,0,0,.18), rgba(0,0,0,.35));
+  background: radial-gradient(60% 60% at 50% 50%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.35));
   opacity: 0;
   transition: opacity .2s ease;
   pointer-events: none; /* clique vai para o <a> */
