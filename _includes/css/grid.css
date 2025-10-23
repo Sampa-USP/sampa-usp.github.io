@@ -112,7 +112,7 @@
   color: var(--text, #1e293b);
   text-align: center;
   margin: 0;
-  padding: 10px 0 6px;
+  padding: 20px 0 6px;
   letter-spacing: 0.5px;
   background: transparent; /* remove qualquer faixa de fundo */
 }
