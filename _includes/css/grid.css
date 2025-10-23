@@ -1,3 +1,8 @@
+.card-title {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
 /* 1) Expande o container do portfolio além do limite do Bootstrap */
 #portfolio .container.portfolio-flex-grid{
   width: 96vw !important;
