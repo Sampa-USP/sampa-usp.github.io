@@ -2,7 +2,7 @@
 #portfolio .portfolio-flex-row {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(360px, 1fr)) !important;
-  gap: 2rem !important;
+  gap: 3rem !important;
   justify-items: stretch !important;   /* <- volta a 'stretch' no grid */
   align-items: start !important;
 }
