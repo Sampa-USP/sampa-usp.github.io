@@ -16,7 +16,7 @@
   grid-template-columns: repeat(3, minmax(360px, 1fr)) !important; /* cards mais largos */
   gap: 0rem !important;            /* menos espaço entre cards */
   align-items: center;
-  justify-items: stretch;
+  justify-items: center;
 }
 
 /* Tablets / Mobile */
