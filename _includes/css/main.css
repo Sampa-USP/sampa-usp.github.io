@@ -555,6 +555,8 @@ section#about.success p {
   margin: 40px auto;            /* espaço externo */
   max-width: 90%;               /* não ocupa toda a tela */
   color: white;
+  min-height: 60vh;
+  padding: 60px 20px;
 }
 
 /* imagem opcional dentro da hero */
