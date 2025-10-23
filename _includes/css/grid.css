@@ -1,3 +1,10 @@
+/* 3) Centralização do conteúdo DENTRO do card */
+#portfolio .portfolio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;                  /* centraliza conteúdo interno */
+  text-align: center;
+}
 
 /* === 1) Alargar o container do portfolio para ~80% da tela === */
 /* Remove o limite do Bootstrap dentro do portfolio */
@@ -15,7 +22,7 @@
   display: grid !important;
   grid-template-columns: repeat(3, minmax(360px, 1fr)) !important; /* cards mais largos */
   gap: 0rem !important;            /* menos espaço entre cards */
-  align-items: center;
+  align-items: stretch;
   justify-items: center;
 }
 
