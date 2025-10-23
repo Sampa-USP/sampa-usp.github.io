@@ -12,20 +12,20 @@ description: The Quantum Computing Group at the SAMPA Research Group, Institute 
 subprojects:
   - title: Ab Initio
     img: ab-initio.png
-    link: sampa-usp.github.io/AbInitio
+    link: /AbInitio
   - title: Catalysis
     img: catalysis.png
-    link: sampa-usp.github.io/Catalysis
+    link: /Catalysis
   - title: Monte Carlo
     img: monte-carlo.png
-    link: sampa-usp.github.io/Monte-Carlo
+    link: /Monte-Carlo
   - title: Quantum Machine Learning
     img: quantum-machine-learning.png
-    link: sampa-usp.github.io/Quantum-ML
+    link: /Quantum-ML
   - title: Error Mitigation
     img: quantum-error-mitigation.png
-    link: sampa-usp.github.io/Error-Mitigation
+    link: /Error-Mitigation
   - title: Quantum Algorithms
     img: quantum-algorithms.png
-    link: sampa-usp.github.io/Quantum-Algorithms
+    link: /Quantum-Algorithms
 ---
