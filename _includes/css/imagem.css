@@ -46,30 +46,36 @@
   transition: transform .2s ease;
 } */
 
-/* A célula ocupa toda a coluna do grid */
-#portfolio .portfolio-flex-row { justify-items: stretch !important; }
-
-/* Caixa padronizada */
-#portfolio .thumb{
+/* A caixa da imagem */
+#portfolio .thumb {
   width: 100%;
-  aspect-ratio: 4 / 3;               /* mesma forma para todos os cards */
-  display: grid;
-  place-items: center;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   padding: 8px;
   border-radius: 10px;
+  background: transparent;
 }
 
-/* O ELEMENTO img preenche a caixa;
-   o conteúdo interno é escalado com contain (sem cortar) */
-#portfolio .portfolio-item .thumb img{
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;     /* mantém proporção, sem crop */
-  object-position: center center;
+/* A imagem se adapta à MAIOR dimensão da caixa sem cortar */
+#portfolio .thumb img {
+  width: auto !important;        /* não força largura total */
+  height: auto !important;       /* idem para altura */
+  max-width: 100% !important;    /* não ultrapassa os limites da caixa */
+  max-height: 100% !important;   /* idem */
+  object-fit: scale-down !important; /* mantém proporção, usando o maior ajuste possível */
+  object-position: center center !important;
   display: block;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
 }
 
+/* Pequeno efeito ao passar o mouse */
+#portfolio .thumb:hover img {
+  transform: scale(1.03);
+}
 /* Efeito sutil ao passar o mouse (opcional) */
 #portfolio .portfolio-item .thumb:hover img{
   transform: scale(1.03);
