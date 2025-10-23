@@ -1,7 +1,4 @@
-.card-title {
-  font-size: 1.2em;
-  opacity: 0.9;
-}
+
 /* =====  A) Normaliza o <a> e o card ===== */
 #portfolio .portfolio-item{
   position: relative;
@@ -33,7 +30,7 @@
 #portfolio .card-title {
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--text, #1e293b);
   text-align: center;
   margin: 0;
