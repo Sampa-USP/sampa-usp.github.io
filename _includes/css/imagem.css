@@ -33,7 +33,7 @@
   object-fit: contain !important;  /* reduz para caber */
   object-position: center center;
   display: block;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.20));
+  /* filter: drop-shadow(0 2px 6px rgba(0,0,0,.20)); */
   transition: transform .2s ease;
 }
 
