@@ -1,183 +1,82 @@
-/* ===========================
-   Paleta suave
-=========================== */
-:root{
-  --card-bg: #e0e7f6;
-  --card-bg-soft: #d3dbec;
-  --card-border: rgba(3,10,28,.08);
-  --card-shadow: 0 10px 24px rgba(3, 7, 18, .18);
-  --title: #011023;
-  --muted: #94a3b8;
+/* ===== Layout 3 colunas responsivo proporcional ===== */
+#portfolio {
+  width: 100vw;
+  max-width: 100%;
+  padding: 60px 4vw;              /* espaço lateral agradável */
+  box-sizing: border-box;
 }
 
-/* ===========================
-   Grid (3 colunas desktop)
-=========================== */
-.portfolio-flex-row{
-  display:grid !important;
-  grid-template-columns: repeat(3, minmax(260px, 1fr)) !important;
-  gap: 28px !important;
-  align-items:start;
-  justify-items:stretch;
-}
-@media (max-width: 1024px){
-  .portfolio-flex-row{ grid-template-columns: repeat(2, minmax(240px, 1fr)) !important; }
-}
-@media (max-width: 640px){
-  .portfolio-flex-row{ grid-template-columns: 1fr !important; }
-}
-
-/* container confortável */
-.container.portfolio-flex-grid{ max-width: 1200px; margin: 0 auto; }
-
-/* ===== Resets contra legado (Bootstrap/tema antigo) ===== */
-.portfolio-flex-item{ width:auto !important; margin:0 !important; float:none !important; display:block !important; }
-.portfolio-item{ box-sizing:border-box; }
-
-/* ===========================
-   Card
-=========================== */
-.portfolio-item{
-  position:relative;
-  border:1px solid var(--card-border);
-  border-radius:14px;
-  background:var(--card-bg);
-  overflow:hidden;
-  box-shadow: var(--card-shadow);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.portfolio-item:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(3,7,18,.25);
-  border-color: rgba(3,10,28,.16);
-}
-
-.portfolio-link{ display:block; color:inherit; text-decoration:none; }
-
-/* Faixa do título */
-.card-title{
-  padding: 10px 14px 6px;
-  background: linear-gradient(180deg, var(--card-bg-soft), transparent 85%);
-  color: var(--title);
-  font-weight: 800;
-  letter-spacing: .02em;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* ===========================
-   Área da imagem (CONTIDA)
-=========================== */
-.thumb{
-  position:relative;
-  aspect-ratio: 16 / 9;      /* todas iguais */
-  width:100%;
-  display:grid;
-  place-items:center;
-  background:
-    radial-gradient(80% 80% at 50% 20%, rgba(0,0,0,.03), transparent 60%),
-    #ffffff;
-  padding:10px;               /* respiro */
-  overflow:hidden;
-  line-height:0;
-  border-radius: 0 0 14px 14px; /* casa com o card */
-}
-
-/* --- AQUI ESTÁ O SEGREDO: vencer o Bootstrap --- */
-.thumb img{
-  width:100% !important;          /* ganha do .img-responsive */
-  height:100% !important;         /* impede height:auto */
-  max-width:none !important;      /* evita limitar só pela largura */
-  object-fit: contain;            /* reduz para caber, sem cortar */
-  object-position: center center; /* centraliza */
-  display:block;
-  border-radius:8px;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.20));
-}
-
-/* se a imagem tiver classes do tema, garantimos que obedeça a regra acima */
-.portfolio-item img.img-responsive,
-.portfolio-item img.img-centered{
-  width:100% !important;
-  height:100% !important;
-  max-width:none !important;
-}
-
-/* Overlay discreto no hover (não cria bloco) */
-.caption{
-  position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center;
-  background: radial-gradient(60% 60% at 50% 50%, rgba(0,0,0,.10), rgba(0,0,0,.30));
-  opacity:0; transition:opacity .2s ease; pointer-events:none;
-  border-radius: inherit;
-}
-.portfolio-link:hover .caption{ opacity:.85; }
-.caption-content{ color:#fff; }
-
-/* Reset contra estilos antigos do tema */
-.portfolio-item .caption,
-.portfolio-item .caption-content{ margin:0; padding:0; border:0; float:none; }
-
-
-
-/* ===== expandir área útil ===== */
-.container.portfolio-flex-grid{
-  width: 92vw;            /* ocupa quase toda a tela */
-  max-width: 1600px;      /* limite confortável em telas grandes */
-  margin: 0 auto;         /* centraliza */
-}
-
-/* ===== grid mais largo e cards maiores ===== */
-.portfolio-flex-row{
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(360px, 1fr)) !important; /* cards mais largos */
-  gap: 36px !important; /* mais respiro entre cards */
+.portfolio-flex-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* divide a tela em 3 colunas iguais */
+  gap: 3vw;                              /* gap proporcional ao tamanho da tela */
+  justify-items: center;
   align-items: start;
 }
 
-/* tablets: mantém 2 colunas grandes */
-@media (max-width: 1100px){
-  .portfolio-flex-row{
-    grid-template-columns: repeat(2, minmax(360px, 1fr)) !important;
-  }
+/* cada card ocupa 100% da célula */
+.portfolio-item {
+  width: 100%;
+  border-radius: 14px;
+  background: var(--card-bg, #e0e7f6);
+  box-shadow: 0 10px 24px rgba(3,7,18,.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.portfolio-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(3,7,18,.25);
 }
 
-/* mobile: 1 coluna bem larga */
-@media (max-width: 700px){
-  .portfolio-flex-row{
-    grid-template-columns: 1fr !important;
-  }
+/* faixa do título */
+.card-title {
+  padding: 10px 16px;
+  background: linear-gradient(180deg, var(--card-bg-soft, #d3dbec), transparent 90%);
+  font-weight: 700;
+  color: #011023;
+  font-size: 1.2rem;
 }
 
-/* ===== card mais encorpado ===== */
-.portfolio-item{
-  border-radius: 16px;
-  box-shadow: 0 14px 36px rgba(3,7,18,.22);
+/* imagem ajustada proporcionalmente */
+.thumb {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 8px;
+  box-sizing: border-box;
 }
-
-/* título e imagem maiores */
-.card-title{
-  font-size: 1.2rem;      /* ~19px */
-  padding: 12px 16px 8px;
-}
-
-/* imagem mais alta (4:3) e com menos padding interno */
-.thumb{
-  aspect-ratio: 4 / 3;    /* aumenta a altura da vitrine */
-  padding: 8px;           /* reduz bordas internas p/ imagem ganhar espaço */
-}
-
-.thumb img{
-  /* mantém contain (reduz sem cortar) */
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
+.thumb img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
 }
 
-/* opcional: reduzir um pouco a força do overlay para deixar a imagem mais visível */
-.portfolio-link:hover .caption{ opacity: .6; }
+/* overlay discreto */
+.caption {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.3);
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none;
+}
+.portfolio-link:hover .caption { opacity: .7; }
+
+/* responsivo: 2 colunas em tablets, 1 em mobile */
+@media (max-width: 1100px) {
+  .portfolio-flex-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4vw;
+  }
+}
+@media (max-width: 700px) {
+  .portfolio-flex-row {
+    grid-template-columns: 1fr;
+    gap: 6vw;
+  }
+}
