@@ -41,7 +41,8 @@
             <div class="row">
               {% for s in post.subprojects %}
               <div class="col-sm-4 portfolio-item">
-                <a href="{{ s.link }}" class="portfolio-link" target="_blank" rel="noopener">
+                <a href="{% if s.link contains 'http' %}{{ s.link }}{% else %}{{ site.baseurl }}/{{ s.link }}{% endif %}"
+                  class="portfolio-link" target="_blank" rel="noopener noreferrer">
                   <img src="img/portfolio/{{ s.img }}" class="img-responsive img-centered"
                     alt="{{ s.alt | default: s.title }}">
                 </a>
